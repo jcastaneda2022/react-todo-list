@@ -19,7 +19,7 @@ export default function TodoList() {
   };
 
   const updateTodo = (todoId, newValue) => {
-    if (!newValue) {
+    if (!newValue.text) {
       return;
     }
     const newTodos = todos.map((item) =>
@@ -30,7 +30,7 @@ export default function TodoList() {
 
   return (
     <header>
-      <h1>Tast List 2022</h1>
+      <h1>Task List 2022</h1>
       <TodoHeader onSubmit={addTodo} />
       <br />
       <hr />

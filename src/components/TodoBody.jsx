@@ -9,14 +9,11 @@ export default function TodoBody({ todos, removeTodo, updateTodo }) {
 
   const submitUpdate = (value) => {
     updateTodo(edit.id, value);
-    setEdit({
-      id: null,
-      value: "",
-    });
+    setEdit({ id: null, value: "" });
   };
 
   if (edit.id) {
-    return <TodoHeader edit={edit} onSubmit={submitUpdate} />;
+    return <TodoHeader onSubmit={submitUpdate} edit={edit} />;
   } else {
     return todos.map((todo, index) => (
       <div id="tasks" key={index}>

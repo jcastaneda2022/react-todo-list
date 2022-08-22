@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-export default function TodoHeader({ edit, onSubmit }) {
+export default function TodoHeader({ onSubmit, edit }) {
   const [input, setInput] = useState(edit ? edit.value : "");
   const inputRef = useRef(null);
 
@@ -25,14 +25,13 @@ export default function TodoHeader({ edit, onSubmit }) {
           id="new-task-input"
           value={input}
           ref={inputRef}
-          onChange={(e) => setInput(e.target.value)}
-          name="text"
-          className="todo-input edit"
+          onChange={(event) => setInput(event.target.value)}
+          className="todo-input"
           style={{ width: "600px" }}
           placeholder="What do you have planned?"
         />
         <button id="new-task-submit" onClick={handleSubmit}>
-          {edit ? "Update todo" : "Add todo"}
+          {edit ? "Update Todo" : "Add Todo"}
         </button>
       </div>
     </form>
